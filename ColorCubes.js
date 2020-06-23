@@ -16,4 +16,8 @@ class ColorCubes{
      
         }
     }
+
+    field_click(x, y) {
+        console.log("field_click", x, y, this.map[x][y]);
+    }
 }
