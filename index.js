@@ -1,5 +1,5 @@
-const FIELD_WIDTH = 50;
-const FIELD_HEIGHT = 30;
+const FIELD_WIDTH = 10;
+const FIELD_HEIGHT = 10;
 const CELL_SIZE = 25;
 const COLORS = ['black', 'red', 'green', 'blue', 'yellow'];
 
@@ -17,7 +17,11 @@ canvas.width = FIELD_WIDTH * CELL_SIZE;
 canvas.addEventListener('click', function(e){
     cc.field_click(Math.floor(e.offsetX / CELL_SIZE), Math.floor(e.offsetY / CELL_SIZE));
     mouse_label.textContent = "Button : " + e.button + ", X: " + e.offsetX + ", Y: " + e.offsetY;
-    action_label.textContent = "call field_action(" + Math.floor(e.offsetX / CELL_SIZE) + ", " + Math.floor(e.offsetY / CELL_SIZE) + ");"
+    action_label.textContent = "call field_click(" + Math.floor(e.offsetX / CELL_SIZE) + ", " + Math.floor(e.offsetY / CELL_SIZE) + ");"
+
+    cc.field_click(Math.floor(e.offsetX / CELL_SIZE), Math.floor(e.offsetY / CELL_SIZE));
+    drawGameField();
+
 })
 
 drawGameField();
